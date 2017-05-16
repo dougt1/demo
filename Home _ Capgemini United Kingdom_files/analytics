@@ -1,0 +1,27 @@
+function piResponse() {
+piSetCookie('visitor_id95412', '64760523', 364);
+piSetCookie('visitor_id95412-hash', 'ce0a6da6f36abe673a856803c6c4410824cb74b458493a0e31bb90bbbb7337e7387723591d29afdfaee506c85589914600fe9424', 364);
+
+if (document.location.protocol != "https:") {
+var analytics_link = "http://" + "go.capgeminigroup.com/analytics?";
+pi.tracker.visitor_id='64760523';
+
+pi.tracker.visitor_id_sign='ce0a6da6f36abe673a856803c6c4410824cb74b458493a0e31bb90bbbb7337e7387723591d29afdfaee506c85589914600fe9424';
+
+var variables = 'conly=true';
+for (property in pi.tracker) {
+	variables += "&"+property+"="+pi.tracker[property];
+}
+var headID = document.getElementsByTagName("head")[0];
+piScriptObj[piScriptNum] = document.createElement('script');
+piScriptObj[piScriptNum].type = 'text/javascript';
+piScriptObj[piScriptNum].src = analytics_link + variables;
+headID.appendChild(piScriptObj[piScriptNum]);
+piScriptObj[piScriptNum].onload = function() { return; }
+}
+}
+piResponse();
+
+
+
+
